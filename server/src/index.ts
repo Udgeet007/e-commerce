@@ -11,7 +11,7 @@ app.use(cors());
 
 app.use("/user", userRouter);
 
-mongoose.connect("mongodb+srv://bhatt8udgeet:543255@cluster1.5d1gdo1.mongodb.net/")
+mongoose.connect("mongodb+srv://udgeetBhatt:543255@ecompedro.qqr7fpl.mongodb.net/")
 
 
 app.listen(3300, () => console.log("SERVER STARTED"));
