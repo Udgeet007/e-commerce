@@ -1,0 +1,11 @@
+{
+  "_id":{
+    "$oid":"1"
+},
+  "productName": "Airpods",
+  "price": 60.00,
+  "description":"High Quality wireless earpods with noise",
+  "stockQuantity": 222,
+  "imageUrl":"https://i5.walmartimages.com/asr/bf2ba57b-8e7e-4e7e-af40-97f203c5a117.cee9e402cfb61c464bbfe5a91a4d9163.jpeg"
+  
+}
