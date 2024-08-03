@@ -50,7 +50,16 @@ router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
       return res.status(400).json({ type: ProductErrors.NO_AVAILABLE_MONEY });
     }
 
-    user.availableMoney -= totalPrice
+    user.availableMoney -= totalPrice;
+    user.purchasedItems.push(...productIDs);
+
+    await user.save();
+    await ProductModel.updateMany(
+      { _id: { $in: productIDs } },
+      { $inc: { stockQuantity: -1 } }
+    );
+
+    res.json({purchasedItems: user.purchasedItems});
   } catch (err) {
     res.status(400).json(err);
   }
