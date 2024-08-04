@@ -65,9 +65,11 @@ export const verifyToken = (
       }
       next();
     });
+  } else {
+    return res.sendStatus(401);
   }
 
-  res.sendStatus(401);
+ 
 };
 
 export { router as userRouter };
